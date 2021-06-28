@@ -1,0 +1,157 @@
+// $Rotate card $旋轉卡片
+.card
+	// $Rotating 旋轉功能
+	perspective: 115.38rem //1500px
+	-webkit-perspective: 115.38rem 
+	-moz-perspective: 115.38rem
+	height: 40rem //502px
+	position: relative
+
+	&__side
+		height: 40rem //520px
+		transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		-webkit-backface-visibility: hidden  //旋轉時隱藏背後的動畫
+		backface-visibility: hidden  //旋轉時隱藏背後的動畫
+		border-radius: 3px
+		overflow: hidden
+		+bxh
+
+		&--front //card__side--front
+			background-color: $colorWhite
+
+		&--back //card__side--back
+			transform: rotateY(180deg)
+			&-1 //card__side--back-1
+				background-image: linear-gradient(to right bottom, $colorSecondaryLight, $colorSecondary)
+			&-2 //card__side--back-2
+				background-image: linear-gradient(to right bottom, $colorPrimaryLight, $colorPrimaryDark)
+			&-3 //card__side--back-3
+				background-image: linear-gradient(to right bottom, $colorTertiaryLight, $colorTertiary)
+
+	&:hover &__side--front
+		transform: rotateY(-180deg)
+		
+	&:hover &__side--back
+		transform: rotateY(0deg)
+
+
+	// $front side style $正面卡片樣式
+	&__picture  //card__picture
+		background-size: cover
+		height: 17.7rem //230px
+		background-blend-mode: screen     //img mix color 圖片混合,ie完全不支援
+		clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%)
+		-webkit-clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%)
+		border-top-left-radius: 3px
+		border-top-right-radius: 3px
+		&--1  //card__picture--1
+			background-image: $img-style-card-1,$img-card-1
+		&--2  //card__picture--2
+			background-image: $img-style-card-2,$img-card-2
+		&--3  //card__picture--3
+			background-image: $img-style-card-3,$img-card-3
+
+
+	&__heading
+		font-size: 2.5rem
+		font-weight: 300
+		text-transform: uppercase
+		text-align: right
+		color: $colorWhite
+		position: absolute
+		top: 9.23rem //120px
+		right: 1.54rem //20px
+		width: 70%
+
+	&__heading-span
+		padding: 0.77rem 1.15rem
+		box-decoration-break: clone //斷行後對齊,box斷行後還是會有獨立的border、padding等元素
+		-webkit-box-decoration-break: clone
+		&--1
+			background-image: linear-gradient(to right bottom, rgba($colorSecondaryLight,0.85), rgba($colorSecondary,0.85))
+		&--2
+			background-image: linear-gradient(to right bottom, rgba($colorPrimaryLight,0.85), rgba($colorPrimaryDark,0.85))
+		&--3
+			background-image: linear-gradient(to right bottom, rgba($colorTertiaryLight,0.85), rgba($colorTertiary,0.85))
+
+	&__details
+		padding: 2.3rem
+		ul
+			list-style: none
+			width: 80%
+			margin: 0 auto
+			li
+				text-align: center
+				font-size: 1.154rem
+				padding: 0.77rem //10px
+				&:not(:last-child)
+					border-bottom: 1px solid $colorGrayLight-2
+	
+	// $Back side style $背面樣式
+	&__center
+		+absCenter
+		width: 90%
+		text-align: center
+
+	&__price-box
+		margin-bottom: 6.15rem //80px
+		color: $colorWhite
+	
+	&__price-only
+		font-size: 1.4rem
+		text-transform: uppercase
+
+	&__price-value
+		font-size: 6rem
+		font-weight: 100	
+
+
+
+	// $rwd
+	+rwd(tab-v)
+		height: auto
+		background-color: $colorWhite
+		border-radius: 3px
+		overflow: hidden
+		+bxh
+
+		&__side
+			height: auto
+			position: relative
+			box-shadow: none
+
+			&--front //card__side--front
+				background-color: $colorWhite
+
+			&--back //card__side--back
+				transform: rotateY(0)
+				clip-path: polygon(0 15%,100% 0, 100% 100%, 0 100%)
+				border-radius: 0
+				border-bottom-left-radius: 3px
+				border-bottom-right-radius: 3px
+		
+		&:hover &__side--front
+			transform: rotateY(0)
+
+		&__details
+			padding: 1rem 2rem
+			
+		// $Back side style $背面樣式
+		&__center
+			position: relative
+			top: 0
+			left: 0
+			transform: translate(0)
+			width: 100%
+			text-align: center
+			padding: 7rem 4rem 4rem 4rem
+
+		&__price-box
+			margin-bottom: 3rem //80px
+
+		&__price-value
+			font-size: 5rem

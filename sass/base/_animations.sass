@@ -1,0 +1,36 @@
+// $Animation $Keyframes
+
+.animation-moveInLeft
+	animation: moveInLeft 1s ease-out
+.animation-moveInRight
+	animation: moveInRight 1s ease-out
+.animation-moveInBottom
+	animation: moveInBottom 0.5s ease-out 0.75s	backwards
+	
+@keyframes moveInLeft
+	0%
+		opacity: 0
+		transform: translateX(-10rem)  // -100px
+	80%
+		transform: translateX(1rem) // 10px
+	100%
+		opacity: 1
+		transform: translateX(0rem) // 0px
+
+@keyframes moveInRight
+	0%
+		opacity: 0
+		transform: translateX(10rem)  //100px
+	80%
+		transform: translateX(-1rem) //-10px
+	100%
+		opacity: 1
+		transform: translateX(0rem)	  //0px
+
+@keyframes moveInBottom
+	0%
+		opacity: 0
+		transform: translateY(3rem)  //30px
+	100%
+		opacity: 1
+		transform: translateY(0rem)	  //0px	

@@ -1,0 +1,51 @@
+// $Color
+$colorPrimary: #55c57a
+$colorPrimaryLight: #7ed56f
+$colorPrimaryDark: #28b485
+
+$colorSecondaryLight: #ffb900 //淺橘
+$colorSecondary: #ff7730 //橘色
+
+$colorTertiaryLight: #2998ff //淺藍
+$colorTertiary: #5643fa  //藍色
+
+$colorGray: #777
+$colorGrayLight-1: #f7f7f7  //淺灰
+$colorGrayLight-2: #eee //淺淺灰
+
+$colorWhite: #fff
+$colorBlack: #000
+$colorBlackLight: #333
+
+// $Font
+// 使用rem font size會有最小值只能是13px的問題(chrome瀏覽器)
+$font-size-default: 1.6rem  // 16px
+
+
+// $Grid
+// 使用rem length會有1rem為13px的問題(但length不會有最小值為13px問題)，故要改成以下換算(chrome瀏覽器)
+$grid-row-width: 87.7rem  //1140px  1140/13 = 87.7rem
+$gutter-ver: 8rem  // 垂直間距 80px 80/13 = 6.15rem
+$gutter-ver-small: 6rem  // 垂直間距 60px
+$gutter-hor: 6rem // 水平間距 60px 60/13 = 4.61rem
+
+
+//$Img
+
+// hero layout/_header.sass  .header
+$img-hero-small: url('../img/hero-small.jpg')
+$img-hero: url('../img/hero.jpg')
+$img-style-hero: linear-gradient(to right bottom,rgba($colorPrimaryLight,0.8),rgba($colorPrimaryDark,0.8))
+
+// card components/_card.sass .card__picture--1~3
+$img-card-1: url('../img/nat-5.jpg')
+$img-card-1-large: url("../img/nat-5-large.jpg")
+$img-style-card-1: linear-gradient(to right bottom, $colorSecondaryLight, $colorSecondary)
+
+$img-card-2: url('../img/nat-6.jpg')
+$img-card-2-large: url("../img/nat-6-large.jpg")
+$img-style-card-2: linear-gradient(to right bottom, $colorPrimaryLight, $colorPrimaryDark)
+
+$img-card-3: url('../img/nat-7.jpg')
+$img-card-3-large: url("../img/nat-7-large.jpg")
+$img-style-card-3: linear-gradient(to right bottom, $colorTertiaryLight, $colorTertiary)

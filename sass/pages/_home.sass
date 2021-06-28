@@ -1,0 +1,80 @@
+.section-about
+	background-color: $colorGrayLight-1
+	padding: 19.23rem 0 // 250px 
+	margin-top: -20vh
+
+	// +rwd(phone)
+	// 	padding: 15.38rem 0
+
+	// +rwd(phone-sm)
+	// 	padding: 12rem 0		
+
+
+.section-features
+	padding: 15.38rem 0 //200px
+	background-image: linear-gradient(to right bottom,rgba($colorPrimaryLight,0.8),rgba($colorPrimaryDark,0.8)), url("../img/nat-4.jpg")
+	background-size: cover
+	transform: skewY(-7deg)
+	margin-top: -7.7rem //100px
+	// resolution：瀏覽器密度 高於192dpi(2x)，且寬度大於600px以上,或者寬度2000以上則套用以下樣式
+	// 單位轉換為em  600/16=37.5em  2000/16=125em
+	@media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em)
+		background-image: linear-gradient(to right bottom,rgba($colorPrimaryLight,0.8),rgba($colorPrimaryDark,0.8)), url("../img/nat-4-large.jpg")
+
+	& > *  // 只指定 .section-features 底下的『第一個子層』(.row)全部套用此效果
+		transform: skewY(7deg)
+
+	+rwd(tab-v)
+		padding: 10rem 0
+
+.section-tours
+	background-color: $colorGrayLight-1
+	padding: 19.23rem 0 11.54rem 0 // 250px 0 150px 0
+	margin-top: -7.7rem //100px
+
+	+rwd(tab-v)
+		padding: 15rem 0 8rem 0
+
+.section-stories
+	padding: 11.54rem 0 //150px
+	position: relative
+
+	+rwd(tab-v)
+		padding: 8rem 0
+
+.section-book
+	padding: 11.54rem 0 //150px
+	background-image: linear-gradient(to right bottom, $colorPrimaryLight, $colorPrimaryDark),url("")
+
+	+rwd(tab-v)
+		padding: 8rem 0
+
+.book
+	// 一半矩形背景 
+	background-image: linear-gradient(105deg,rgba($colorWhite,0.9) 0%, rgba($colorWhite,0.9) 50%, transparent 50%, transparent 100%), url("../img/nat-10-large.jpg")
+	background-size: cover
+	border-radius: 3px
+	+bxh
+
+	+rwd(tab-l)
+		border-radius: 0
+		background-image: linear-gradient(105deg,rgba($colorWhite,0.9) 0%, rgba($colorWhite,0.9) 65%, transparent 65%, transparent 100%), url("../img/nat-10-large.jpg")
+
+	+rwd(tab-v)
+		background-image: linear-gradient(to right,rgba($colorWhite,0.9) 0%, rgba($colorWhite,0.9) 100%), url("../img/nat-10.jpg")
+		
+	&__form
+		width: 50%
+		padding: 4.61rem //60px
+
+		+rwd(tab-l)
+			width: 65%
+		
+		+rwd(tab-v)
+			width: 100%
+
+		+rwd(phone)
+			padding: 3rem	
+
+		+rwd(phone-sm)
+			padding: 2rem			

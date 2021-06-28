@@ -1,0 +1,90 @@
+
+// $clearfix 清除浮動
+@mixin clearfix
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+
+// $Btn 按鈕基本設定
+@mixin btn
+	&:link,&:visited
+		position: relative
+		text-decoration: none
+		display: inline-block
+		-webkit-user-select: none
+		-moz-user-select: none
+		-ms-user-select: none
+		user-select: none
+		-webkit-user-drag: none
+		user-drag: none	
+
+
+// $box-shadow 
+@mixin bxh
+	box-shadow: 0 1.154rem 3.077rem rgba($colorBlack, 0.15)
+
+@mixin bxh-small
+	box-shadow: 0 1rem 2rem rgba($colorBlack,0.2)
+
+@mixin bxh-big
+	box-shadow: 0 1.3rem 3.5rem rgba($colorBlack, 0.5)
+
+@mixin bxh-large
+	box-shadow: 0 2.3rem 4.61rem rgba($colorBlack,0.1)
+
+
+// $text-bg 背景色文字
+@mixin text-bg($color1,$color2: $color1)
+	background-image: linear-gradient(to right, $color1, $color2)
+	background-clip: text
+	-webkit-background-clip: text
+	color: transparent
+
+
+// position absolute center 置中
+@mixin absCenter
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+
+
+// $RWD	media query manager
+// 0px - 400px Phone small 
+// 0px - 600px Phone 手機
+// 600px - 900px Tablet portrait  平板-垂直
+// 900px - 1200px Tablet landscape 平板-水平
+// [1200px - 1800px] is where our normal styles apply 
+// 1800px ~ up   Big desktop
+
+//第一種方法，一次定義一種size
+@mixin rwd-phone
+	@media (max-width: 600px)
+		@content
+
+
+//第二種方法，一次定義所有斷點
+// $breakpoint argument choices
+// - phone-sm
+// - phone
+// - tab-v
+// - tab-l 
+// - big-desktop
+
+// RWD調整順序：Base + typography > general layout > page layout > components
+
+// media判斷尺寸建議用em ,因為rem在不同瀏覽器下會有不一樣的size
+// 1em = 16px
+@mixin rwd($breakpoint)
+	@if $breakpoint == phone-sm
+		@media (max-width: 25em) { @content } //400px
+	@if $breakpoint == phone 
+		@media (max-width: 37.5em) { @content } //600px
+	@if $breakpoint == tab-v 
+		@media (max-width: 56.25em) { @content }  //900px
+	@if $breakpoint == tab-l
+		@media (max-width: 75em) { @content }  //1200px
+	@if $breakpoint == big-desktop 
+		@media (min-width: 112.5em) { @content }  //1800px

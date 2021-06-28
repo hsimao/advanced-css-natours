@@ -1,0 +1,180 @@
+.navigation
+
+    &__button,&__button-class
+        background-color: $colorWhite
+        height: 5.38rem //70px
+        width: 5.38rem //70px
+        position: fixed
+        top: 4.6rem 
+        right: 4.6rem
+        border-radius: 50%
+        z-index: 200
+        +bxh-small
+        text-align: center
+        cursor: pointer
+
+        +rwd(tab-v)
+            top: 3rem
+            right: 3.3rem
+    
+        +rwd(phone)
+            top: 2.5rem
+            right: 3rem
+
+        +rwd(phone-sm)
+            top: 1rem
+            right: 1rem
+            // opacity: 0.5
+            width: 4.5rem
+            height: 4.5rem
+
+    &__button-class
+        opacity: 0
+        visibility: hidden
+
+    &__icon
+        position: relative
+        margin-top: 2.6rem
+
+        +rwd(phone-sm)
+            margin-top: 2.1rem
+
+        &,
+        &:before,
+        &:after
+            width: 2.3rem //30px
+            height: 4px
+            background-color: $colorPrimaryDark
+            display: inline-block
+            border-radius: 2px
+            transition: all 0.2s
+            transform-origin: center
+
+        &:before,
+        &:after
+            content: ""
+            position: absolute
+            left: 0
+            top: 0
+        
+        &:before
+            top: -0.77rem
+            
+        &:after
+            top: 0.77rem
+    
+    &__button:hover &__icon:before
+        left: -5px
+    &__button:hover &__icon:after
+        left: 5px
+
+    // 點擊後icon效果
+    #popup-overlay:target ~ &__button
+        opacity: 0
+        visibility: hidden
+
+    #popup-overlay:target ~ &__button-class &__icon
+        height: 0px
+    #popup-overlay:target ~ &__button-class &__icon:before
+        transform: rotate(225deg)
+        top: 0
+        left: 0 
+    #popup-overlay:target ~ &__button-class &__icon:after
+        transform: rotate(-225deg)
+        top: 0
+        left: 0   
+
+    &__bg
+        height: 4.61rem //60px
+        width: 4.61rem //60px
+        border-radius: 50%
+        position: fixed
+        top: 5rem //65px
+        right: 5rem //65px
+        background-image: radial-gradient($colorPrimaryLight,$colorPrimaryDark)
+        z-index: 100
+        transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1)
+        -webkit-backface-visibility: hidden 
+        backface-visibility: hidden
+
+        +rwd(tab-v)
+            top: 3.4rem
+            right: 3.6rem
+
+        +rwd(phone)
+            top: 3rem
+            right: 3.3rem
+
+        +rwd(phone-sm)
+            top: 1.2rem
+            right: 1.2rem
+            width: 4rem
+            height: 4rem
+
+    &__nav
+        height: 100vh
+        width: 0
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 150
+        opacity: 0
+        visibility: hidden
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+        -webkit-backface-visibility: hidden 
+        backface-visibility: hidden
+
+    &__list
+        +absCenter
+        list-style: none
+        text-align: center
+        width: 100%
+
+    &__item
+        margin: 0.77rem
+
+    &__link
+        &:link,
+        &:visited
+            display: inline-block
+            font-size: 3rem
+            font-weight: 300
+            padding: 0.77rem 1.54rem
+            color: $colorWhite
+            text-decoration: none
+            text-transform: uppercase
+            background-image: Linear-gradient(120deg, transparent 0%, transparent 50%, $colorWhite 50%)
+            background-size: 240%
+            transition: all 0.4s
+            -webkit-backface-visibility: hidden 
+            backface-visibility: hidden
+            
+            span
+                display: inline-block
+                margin-right: 1rem
+        
+        &:hover,
+        &:active
+            background-position: 95%
+            color: $colorPrimary
+            transform: translateX(0.77rem)
+
+    // functionality 點擊後狀態  
+    #popup-overlay:target
+        transform: scale(80)
+        visibility: visible
+        opacity: 1
+
+    #popup-overlay:target ~ &__nav
+        opacity: 1
+        width: 100%
+        visibility: visible   
+
+    #popup-overlay:target ~ &__button-class
+        visibility: visible
+        opacity: 1
+        z-index: 300
+
+    #popup-overlay:target ~ &__button
+        opacity: 0
+        visibility: hidden

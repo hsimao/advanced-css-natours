@@ -1,0 +1,23 @@
+.feature-box
+	background-color: rgba($colorWhite, 0.8)
+	font-size: 1.154rem
+	padding: 1.9rem
+	text-align: center
+	border-radius: 3px
+	transition: all 0.3s
+	+bxh //box-shadow: 0 1.154rem 3.077rem rgba($colorBlack, 0.15)
+
+	+rwd(tab-v)
+		padding: 1.5rem
+		 
+	&__icon
+		font-size: 6rem //60px
+		display: inline-block
+		margin-bottom: 0.38rem // 5px
+		+text-bg($colorPrimaryLight,$colorPrimaryDark)
+
+		+rwd(tab-v)
+			margin-bottom: 0rem
+
+	&:hover
+		transform: translateY(-1rem) scale(1.03)

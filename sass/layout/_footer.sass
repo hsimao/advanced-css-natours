@@ -1,0 +1,65 @@
+.footer
+	background-color: $colorBlackLight
+	padding: 7.7rem 0
+	font-size: 1.4rem
+	color: $colorGrayLight-1
+	font-weight: 300
+
+	+rwd(tab-v)
+		padding: 5rem 0
+
+	&__logo-box
+		text-align: center
+		margin-bottom: 6.15rem
+
+		+rwd(tab-v)
+			margin-bottom: 4rem
+
+	&__logo
+		width: 11.54rem
+		height: auto
+		
+	&__navigation
+		border-top: 1px solid $colorGray
+		padding-top: 1.54rem
+		display: inline-block
+
+		+rwd(tab-v)
+			width: 100%
+			text-align: center
+
+	&__list
+		list-style: none
+
+	&__item
+		display: inline-block
+		&:not(:last-child)
+			margin-right: 1.154rem
+
+	&__link
+		&:link,
+		&:visited
+			color: $colorGrayLight-1
+			background-color: $colorBlackLight
+			text-decoration: none
+			text-transform: uppercase
+			display: inline-block
+			transition: all 0.2s
+
+		&:hover,
+		&:active
+			color: $colorPrimary
+			box-shadow: 0 0.77rem 1.7rem rgba($colorBlack,0.4)
+			transform: rotate(5deg) scale(1.2)
+
+	&__copyright
+		border-top: 1px solid $colorGray
+		padding-top: 1.54rem
+		width: 80%
+		float: right
+		text-align: right
+
+		+rwd(tab-v)
+			width: 100%
+			text-align: center
+			float: none

@@ -1,0 +1,82 @@
+// $Btn $Button
+.btn
+	+btn
+	&,&:link,&:visited
+		padding: 1.5rem 4rem  //15px 40px
+		border-radius: 10rem //100px
+		transition: all 0.2s
+		font-size: $font-size-default
+		text-transform: uppercase
+		position: relative
+
+		//change for the <button> element
+		border: none
+		cursor: pointer
+
+		+rwd(phone-sm)
+			// padding: 1rem 2rem
+
+	&:hover
+		transform: translateY(-3px) 
+		box-shadow: 0 1rem 2rem rgba(black,0.2)
+
+	&:active,&:focus
+		outline: none
+		transform: translateY(-1px)
+		box-shadow: 0 0.5rem 1rem rgba(black,0.2)
+		
+	&.btn--white
+		background-color: $colorWhite
+		color: $colorGray
+
+	&.btn--primary
+		background-color: $colorPrimary
+		color: $colorWhite
+
+	&.btn--cover
+		&:after
+			content: ""
+			display: inline-block
+			width: 100%
+			height: 100%
+			border-radius: 10rem
+			position: absolute
+			top: 0
+			left: 0
+			z-index: -1
+			transition: all 0.4s
+		&:hover
+			&:after
+				transform: scaleX(1.4) scaleY(1.6)
+				// transform: scale(1.4)
+				opacity: 0
+
+	&.btn--white.btn--cover
+		&:after
+			background-color: $colorWhite
+
+	&.btn--primary.btn--cover
+		&:after
+			background-color: $colorPrimary
+
+
+//$Btn-text
+.btn-text
+	+btn
+	&:link,&:visited
+		font-size: $font-size-default
+		color: $colorPrimary
+		border-bottom: solid 1px $colorPrimary
+		padding: 5px 15px
+		transition: all 0.2s
+		// border-radius: 3px
+
+	&:hover
+		background-color: $colorPrimary
+		color: $colorWhite
+		box-shadow: 0 0.77rem 1.54rem rgba($colorBlack, 0.15)
+		transform: translateY(-2px)
+
+	&:active
+		box-shadow: 0 0.38rem 0.77rem rgba($colorBlack, 0.15)
+		transition: translateY(0)

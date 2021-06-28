@@ -1,0 +1,138 @@
+.navigation
+    &__checkbox
+        display: none
+
+    &__button,&__button-class
+        background-color: $colorWhite
+        height: 5.38rem //70px
+        width: 5.38rem //70px
+        position: fixed
+        top: 4.6rem 
+        right: 4.6rem
+        border-radius: 50%
+        z-index: 200
+        +bxh-small
+        text-align: center
+        cursor: pointer
+    
+    &__button-class
+        background-color: red
+        opacity: 0
+        visibility: hidden
+
+
+    &__icon
+        position: relative
+        margin-top: 2.6rem
+
+        &,
+        &:before,
+        &:after
+            width: 2.3rem //30px
+            height: 4px
+            background-color: $colorPrimaryDark
+            display: inline-block
+            border-radius: 2px
+            transition: all 0.2s
+            transform-origin: center
+        
+        &:before,
+        &:after
+            content: ""
+            position: absolute
+            left: 0
+            top: 0
+        
+        &:before
+            top: -0.77rem
+            
+        &:after
+            top: 0.77rem
+    
+    &__button:hover &__icon:before
+        left: -5px
+    &__button:hover &__icon:after
+        left: 5px
+
+    &__checkbox:checked + &__button &__icon
+        height: 0px
+    &__checkbox:checked + &__button &__icon:before
+        transform: rotate(225deg)
+        top: 0
+        left: 0
+    &__checkbox:checked + &__button &__icon:after
+        transform: rotate(-225deg)
+        top: 0
+        left: 0
+
+    &__bg
+        height: 4.61rem //60px
+        width: 4.61rem //60px
+        border-radius: 50%
+        position: fixed
+        top: 5rem //65px
+        right: 5rem //65px
+        background-image: radial-gradient($colorPrimaryLight,$colorPrimaryDark)
+        z-index: 100
+        transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1)
+        backface-visibility: hidden
+        opacity: 0
+        visibility: hidden
+
+
+    &__nav
+        height: 100vh
+        width: 0
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 150
+        opacity: 0
+        visibility: hidden
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+        backface-visibility: hidden
+
+    &__list
+        +absCenter
+        list-style: none
+        text-align: center
+        width: 100%
+
+    &__item
+        margin: 0.77rem
+
+    &__link
+        &:link,
+        &:visited
+            display: inline-block
+            font-size: 3rem
+            font-weight: 300
+            padding: 0.77rem 1.54rem
+            color: $colorWhite
+            text-decoration: none
+            text-transform: uppercase
+            background-image: Linear-gradient(120deg, transparent 0%, transparent 50%, $colorWhite 50%)
+            background-size: 240%
+            transition: all 0.4s
+            backface-visibility: hidden
+            span
+                display: inline-block
+                margin-right: 1rem
+        
+        &:hover,
+        &:active
+            background-position: 95%
+            color: $colorPrimary
+            transform: translateX(0.77rem)
+
+    // functionality 點擊後狀態
+    &__checkbox:checked ~ &__bg
+        transform: scale(80)
+
+    &__checkbox:checked ~ &__nav
+        opacity: 1
+        width: 100%
+        visibility: visible   
+
+.hello
+    color: red        

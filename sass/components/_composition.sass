@@ -1,0 +1,50 @@
+.composition
+	position: relative
+
+	&__photo  // .composition__photo
+		width: 55%
+		box-shadow: 0 1rem 3rem rgba($colorBlack, 0.4)
+		border-radius: 2px
+		position: absolute
+		z-index: 10
+		transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+
+		+rwd(tab-v)
+			float: left
+			position: relative
+			width: 33.333333%
+			+bxh-small
+
+		&--p1 // .composition__photo--p1
+			left: 0
+			top: -1.5rem
+			+rwd(tab-v)
+				top: 0.5rem
+				transform: scale(1.1)
+
+		&--p2 // .composition__photo--p1
+			right: 0
+			top: 1.5rem
+			+rwd(tab-v)
+				top: -1rem
+				transform: scale(1.3)
+				z-index: 15
+
+		&--p3 // .composition__photo--p1
+			left: 20%
+			top: 7.7rem //100px
+			+rwd(tab-v)
+				top: 1rem
+				left: 0
+				transform: scale(1.2)
+
+		&:hover
+			transform: scale(1.1) translate(-3rem,-1rem)
+			+bxh-big
+			z-index: 20
+			outline: solid 0.77rem $colorPrimary
+			outline-offset: 1.54rem //20px
+
+	// 若觸發hover,另外兩張沒有hover的圖片縮小		
+	&:hover &__photo:not(:hover) // .composition:hover .composition__photo:not(:hover) 
+		transform: scale(0.8)

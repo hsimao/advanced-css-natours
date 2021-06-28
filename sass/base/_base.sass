@@ -1,0 +1,30 @@
+
+// $Reset 
+*, *::after, *::before
+	margin: 0
+	padding: 0
+	box-sizing: inherit
+
+// 基本字體設定,運用繼承關係
+html
+	// 使用rem設定大小，先將瀏覽器預設改為10px，便於直觀的rem換算(1rem = 10px)
+	// length 1rem=13px , font-size 1rem=13px(最小值為13px) 1.6rem=16px 
+	font-size: 62.5% // 若user瀏覽器預設字體為16px(16px * 62.5% = 10px)  
+	// font-size: 55.6% //user瀏覽器預設字體為18px(16px * 55.6% = 10.008px)
+	
+	+rwd(big-desktop)
+		font-size: 75%  // 1rem = 12px  12/16 = 75%
+
+	// +rwd(tab-l)
+	// 	font-size: 56.25%  // 1rem = 9px  9/16 = 56.25%
+
+	// +rwd(tab-v)
+	// 	font-size: 50%  // 1rem = 8px 8/16 = 50%
+
+
+body
+	box-sizing: border-box
+	padding: 3rem  //30px
+	+rwd(tab-v)
+		padding: 0
+		

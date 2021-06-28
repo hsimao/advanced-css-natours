@@ -1,0 +1,34 @@
+// $Import
+
+// $Abstracts 變數、函示、mixins設定
+@import "abstracts/functions"  // abstracts/_functions.sass
+@import "abstracts/mixins"
+@import "abstracts/variables" // 變數 color
+
+// $Base 基礎設定 
+@import "base/base"  // 重置 * html ,有html font-size設定，所以要放在最上方
+@import "base/animations"  // 動畫
+@import "base/typography"  // 排版 body heading
+@import "base/utilities"  // 工具
+
+// $Components 元件設定
+@import "components/button" // 按鈕
+@import "components/composition"  //照片佈景
+@import "components/feature-box"  //card
+@import "components/card"  //card
+@import "components/story"  //story
+@import "components/bg-video"  //bg-video 背景影片
+@import "components/form"  //表單
+@import "components/popup"  //彈出視窗
+
+// $Layout 佈局
+@import "layout/grid" //格線 
+@import "layout/header"
+@import "layout/footer"
+// @import "layout/navigation" //導覽列
+@import "layout/navigation-new" //導覽列 new
+
+// $Pages 頁面
+@import "pages/home" 
+
+

@@ -1,0 +1,78 @@
+// $body
+body
+	font-family: "Lato", sans-serif, "微軟正黑體"
+	font-weight: 400
+	line-height: 1.7
+	color: $colorGray
+
+// $heading
+.heading-primary
+	color: $colorWhite
+	text-transform: uppercase
+	//fix bug 消除動畫結束時會產生微振動方法
+	-webkit-backface-visibility: hidden 
+	backface-visibility: hidden
+	margin-bottom: 6rem // 60px		
+	&--main
+		display: block
+		font-size: 6rem // 60px
+		font-weight: 400
+		letter-spacing: 3.5rem // 35px
+
+		+rwd(tab-v)
+			letter-spacing: 1.5rem
+		+rwd(phone)
+			letter-spacing: 1rem
+			font-size: 5rem
+		+rwd(phone-sm)
+			font-size: 4rem
+
+	&--sub
+		display: block
+		font-size: 2rem  // 20px
+		font-weight: 700
+		letter-spacing: 1.75rem  //17.5px
+
+		+rwd(tab-v)
+			letter-spacing: 0.5rem
+		+rwd(phone)
+			font-size: 1.8rem
+
+.heading-secondary
+	font-size: 3.5rem
+	text-transform: uppercase
+	font-weight: 700
+	display: inline-block
+	+text-bg($colorPrimaryLight,$colorPrimaryDark)
+	letter-spacing: .2rem
+	transition: all .2s
+
+	+rwd(tab-v)
+		font-size: 3rem
+		letter-spacing: 0rem
+
+	+rwd(phone)
+		font-size: 2.5rem
+		letter-spacing: 0rem
+
+	&:hover
+		transform: skewY(2deg) skewX(15deg) scale(1.1)
+		text-shadow: 0.5rem 1rem 2rem rgba($colorBlack,0.2)
+
+.heading-tertiary
+	font-size: $font-size-default
+	font-weight: 700
+	text-transform: uppercase
+	padding: 0 1rem
+
+	+rwd(tab-v)
+		padding: 0	
+		
+.paragraph 
+	font-size: $font-size-default
+	padding: 0 1rem
+	&:not(:last-child)
+		margin-bottom: 2.3rem // 30px 30/13 = 2.3
+
+	+rwd(tab-v)
+		padding: 0	
